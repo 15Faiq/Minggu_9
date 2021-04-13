@@ -18,6 +18,7 @@ class MovieDetail extends StatelessWidget {
     }
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Colors.orange,
       appBar: AppBar(
         title: Text(movie.originalTitle),
       ),

@@ -32,19 +32,29 @@ class _MovieListState extends State<MovieList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.orange,
         appBar: AppBar(
-          title: Text("Popular Movies"),
+          title: Text("Netflix"),
         ),
         body: ListView.builder(
           itemCount: (this.moviesCount == null) ? 0 : this.moviesCount,
           itemBuilder: (context, int position) {
             return Card(
-              color: Colors.white,
+              color: Colors.orange[300],
               elevation: 2.0,
               
             
               child: ListTile(
-                leading: Image.network(imgPath+movies[position].posterPath),
+                leading: Container(
+                    width: 40.0,
+                    height: 40.0,
+                    decoration: new BoxDecoration(
+                        
+                        image: new DecorationImage(
+                          fit: BoxFit.fill,
+                          image: new NetworkImage(
+                              imgPath + movies[position].posterPath),
+                        ))),
                 title: Text(movies[position].originalTitle),
                 subtitle:
                     Text('Rating = ' + movies[position].voteAverage.toString()),
